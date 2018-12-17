@@ -1,6 +1,10 @@
 {
   "name": "playground-react-autosuggest",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://rxseven@github.com/rxseven/playground-react-autosuggest.git"
+  },
   "author": {
     "name": "Theerawat Pongsupawat",
     "email": "rxseven.com@gmail.com",
