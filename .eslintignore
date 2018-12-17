@@ -3,3 +3,5 @@
 /coverage
 /scripts
 /tmp
+
+/src/serviceWorker.js
