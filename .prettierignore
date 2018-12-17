@@ -3,5 +3,7 @@
 /coverage
 /scripts
 /tmp
+
+/src/serviceWorker.js
 package.json
 README.md
