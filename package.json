@@ -1,6 +1,11 @@
 {
   "name": "playground-react-autosuggest",
   "version": "0.1.0",
+  "author": {
+    "name": "Theerawat Pongsupawat",
+    "email": "rxseven.com@gmail.com",
+    "url": "http://www.rxseven.com"
+  },
   "private": true,
   "scripts": {
     "start": "node scripts/start.js",
