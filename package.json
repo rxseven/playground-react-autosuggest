@@ -15,6 +15,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
+    "format": "prettier-eslint --write \"src/**/*.{js,json,jsx,scss}\"",
     "start": "node scripts/start.js",
     "test": "node scripts/test.js --config jest.config.json"
   },
