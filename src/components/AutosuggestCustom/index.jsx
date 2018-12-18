@@ -5,6 +5,7 @@ import React from 'react';
 import Autosuggest from 'react-autosuggest';
 
 import countries from '../../data/countries';
+import Input from '../Input';
 
 // Suggestion list
 const dummy = countries;
@@ -157,6 +158,7 @@ class AutosuggestCustom extends React.Component {
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionHighlighted={this.onSuggestionHighlighted}
           onSuggestionSelected={this.onSuggestionSelected}
+          renderInputComponent={Input}
           renderSuggestion={renderSuggestion}
           shouldRenderSuggestions={this.shouldRenderSuggestions}
           suggestions={suggestions}
