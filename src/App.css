@@ -1,0 +1,35 @@
+.searchbox {
+  width: 40%;
+}
+
+.status {
+  line-height: 52px;
+}
+
+.item {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  background-color: green;
+  display: inline-block;
+  height: 8px;
+  margin-right: 5px;
+  width: 8px;
+}
+
+.name {
+  display: inline-block;
+}
+
+.code {
+  font-size: 0.75rem;
+  text-align: left;
+  width: 2rem;
+}
+
+.highlight {
+  color: red;
+}
