@@ -4,6 +4,7 @@ import React from 'react';
 // Components
 import AutosuggestCustom from './components/AutosuggestCustom';
 import AutosuggestAsync from './components/AutosuggestAsync';
+import AutosuggestPreload from './components/AutosuggestPreload';
 import Countries from './components/Countries';
 
 import './App.css';
@@ -15,6 +16,8 @@ const App = () => (
     <AutosuggestCustom />
     <h2>Asynchronous</h2>
     <AutosuggestAsync />
+    <h2>Preload</h2>
+    <AutosuggestPreload />
     <h2>Countries</h2>
     <Countries />
   </div>
