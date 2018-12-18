@@ -10,6 +10,7 @@ import './App.css';
 
 const App = () => (
   <div>
+    <h1>React Autosuggest</h1>
     <h2>Custom</h2>
     <AutosuggestCustom />
     <h2>Asynchronous</h2>
