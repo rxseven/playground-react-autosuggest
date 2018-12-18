@@ -122,13 +122,6 @@ class AutosuggestCustom extends React.Component {
     console.log('method:', method);
   };
 
-  // Highlighted suggestion changes
-  // This function is called when the highlighted suggestion changes
-  onSuggestionHighlighted = ({ suggestion }) => {
-    console.log('onSuggestionHighlighted');
-    console.log('suggestion:', suggestion);
-  };
-
   // Display suggestions only when input value is at least 1 characters long
   // By default, suggestions are rendered when the input isn't blank
   shouldRenderSuggestions = value => value.trim().length > 0;
@@ -156,7 +149,6 @@ class AutosuggestCustom extends React.Component {
           inputProps={inputProps}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionHighlighted={this.onSuggestionHighlighted}
           onSuggestionSelected={this.onSuggestionSelected}
           renderInputComponent={Input}
           renderSuggestion={renderSuggestion}
