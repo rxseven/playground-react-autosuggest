@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './libraries/icons';
 import App from './App';
+import './styles/components/autosuggest.css';
 import './index.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
