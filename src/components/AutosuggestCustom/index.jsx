@@ -106,22 +106,6 @@ class AutosuggestCustom extends React.Component {
     });
   };
 
-  // Select suggestion
-  // This function is called when suggestion is selected
-  onSuggestionSelected = (
-    event,
-    {
-      suggestion, suggestionValue, suggestionIndex, sectionIndex, method,
-    },
-  ) => {
-    console.log('onSuggestionSelected');
-    console.log('suggestion:', suggestion);
-    console.log('suggestionValue:', suggestionValue);
-    console.log('suggestionIndex:', suggestionIndex);
-    console.log('sectionIndex:', sectionIndex);
-    console.log('method:', method);
-  };
-
   // Display suggestions only when input value is at least 1 characters long
   // By default, suggestions are rendered when the input isn't blank
   shouldRenderSuggestions = value => value.trim().length > 0;
@@ -149,7 +133,6 @@ class AutosuggestCustom extends React.Component {
           inputProps={inputProps}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionSelected={this.onSuggestionSelected}
           renderInputComponent={Input}
           renderSuggestion={renderSuggestion}
           shouldRenderSuggestions={this.shouldRenderSuggestions}
