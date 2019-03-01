@@ -39,13 +39,13 @@ const renderSuggestion = (suggestion, { query }) => {
 
   const name = (
     <span className="name">
-      {parts.map((part, index) => {
+      {parts.map(part => {
         // Variables
         const className = part.highlight ? 'highlight' : null;
 
         // View
         return (
-          <span className={className} key={index}>
+          <span className={className} key={part.text}>
             {part.text}
           </span>
         );
@@ -58,8 +58,7 @@ const renderSuggestion = (suggestion, { query }) => {
       <span>
         <span className="icon" />
         {name}
-      </span>
-      {' '}
+      </span>{' '}
       <strong className="code">{suggestion.alpha2Code}</strong>
     </span>
   );
@@ -76,7 +75,7 @@ class AutosuggestPreload extends React.Component {
       countries: [],
       loading: false,
       suggestions: [],
-      value: '',
+      value: ''
     };
   }
 
@@ -100,7 +99,7 @@ class AutosuggestPreload extends React.Component {
   // onChange handler
   onChange = (event, { newValue }) => {
     this.setState({
-      value: newValue,
+      value: newValue
     });
   };
 
@@ -112,7 +111,7 @@ class AutosuggestPreload extends React.Component {
 
     // Update state
     this.setState({
-      suggestions: getSuggestions(countries, value),
+      suggestions: getSuggestions(countries, value)
     });
   };
 
@@ -120,7 +119,7 @@ class AutosuggestPreload extends React.Component {
   // This function will be called every time, it needs to clear suggestions
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: [],
+      suggestions: []
     });
   };
 
@@ -139,7 +138,7 @@ class AutosuggestPreload extends React.Component {
       onChange: this.onChange,
       placeholder: loading ? 'Loading...' : 'Country name',
       type: 'text',
-      value,
+      value
     };
 
     // View

@@ -13,7 +13,7 @@ const renderSuggestion = suggestion => <span>{suggestion.name}</span>;
 const makeRequestCreator = () => {
   let call;
 
-  return (url) => {
+  return url => {
     if (call) {
       call.cancel('Only one request allowed at a time.');
     }
@@ -21,7 +21,7 @@ const makeRequestCreator = () => {
     call = axios.CancelToken.source();
 
     return axios.get(url, {
-      cancelToken: call.token,
+      cancelToken: call.token
     });
   };
 };
@@ -38,7 +38,7 @@ class AutosuggestAsync extends React.Component {
     this.state = {
       isLoading: false,
       suggestions: [],
-      value: '',
+      value: ''
     };
 
     // Class properties
@@ -48,7 +48,7 @@ class AutosuggestAsync extends React.Component {
   // Controlled input handler
   onChange = (event, { newValue }) => {
     this.setState({
-      value: newValue,
+      value: newValue
     });
   };
 
@@ -59,7 +59,7 @@ class AutosuggestAsync extends React.Component {
 
     // Set loading status
     this.setState({
-      isLoading: true,
+      isLoading: true
     });
 
     // Get country list
@@ -70,7 +70,7 @@ class AutosuggestAsync extends React.Component {
       // Update state
       this.setState({
         isLoading: false,
-        suggestions: response.data,
+        suggestions: response.data
       });
     } catch (error) {
       // Cancelled requests
@@ -83,7 +83,7 @@ class AutosuggestAsync extends React.Component {
   // Clear suggestion list
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: [],
+      suggestions: []
     });
   };
 
@@ -96,16 +96,14 @@ class AutosuggestAsync extends React.Component {
       onChange: this.onChange,
       placeholder: 'Country name',
       type: 'text',
-      value,
+      value
     };
 
     // View
     return (
       <div className="searchbox">
         <div className="status">
-          <strong>Status:</strong>
-          {' '}
-          {status}
+          <strong>Status:</strong> {status}
         </div>
         <Autosuggest
           getSuggestionValue={getSuggestionValue}

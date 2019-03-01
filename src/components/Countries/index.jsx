@@ -11,7 +11,7 @@ class Countries extends React.Component {
     // Initial state
     this.state = {
       countries: [],
-      loading: false,
+      loading: false
     };
   }
 
@@ -33,12 +33,13 @@ class Countries extends React.Component {
   };
 
   // Render country list
-  renderList = data => data.map(country => (
-    <div key={country.alpha3Code}>
-      <h5>{country.name}</h5>
-      <img alt={country.name} height="50" src={country.flag} />
-    </div>
-  ));
+  renderList = data =>
+    data.map(country => (
+      <div key={country.alpha3Code}>
+        <h5>{country.name}</h5>
+        <img alt={country.name} height="50" src={country.flag} />
+      </div>
+    ));
 
   // Render component
   render() {

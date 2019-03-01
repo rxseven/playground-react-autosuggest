@@ -14,7 +14,7 @@ const dummy = countries;
 const escapeCharacters = input => input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 // Calculate suggestions for any given input value
-const getSuggestions = (value) => {
+const getSuggestions = value => {
   // Format input value
   const escapedValue = escapeCharacters(value.trim());
 
@@ -44,13 +44,13 @@ const renderSuggestion = (suggestion, { query }) => {
 
   const name = (
     <span className="name">
-      {parts.map((part, index) => {
+      {parts.map(part => {
         // Variables
         const className = part.highlight ? 'highlight' : null;
 
         // View
         return (
-          <span className={className} key={index}>
+          <span className={className} key={part.text}>
             {part.text}
           </span>
         );
@@ -63,8 +63,7 @@ const renderSuggestion = (suggestion, { query }) => {
       <span>
         <span className="icon" />
         {name}
-      </span>
-      {' '}
+      </span>{' '}
       <strong className="code">{suggestion.code}</strong>
     </span>
   );
@@ -79,14 +78,14 @@ class AutosuggestCustom extends React.Component {
     // Initial state
     this.state = {
       suggestions: [],
-      value: '',
+      value: ''
     };
   }
 
   // onChange handler
   onChange = (event, { newValue }) => {
     this.setState({
-      value: newValue,
+      value: newValue
     });
   };
 
@@ -94,7 +93,7 @@ class AutosuggestCustom extends React.Component {
   // This function will be called every time, it might need to update suggestions
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
-      suggestions: getSuggestions(value),
+      suggestions: getSuggestions(value)
     });
   };
 
@@ -102,7 +101,7 @@ class AutosuggestCustom extends React.Component {
   // This function will be called every time, it needs to clear suggestions
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: [],
+      suggestions: []
     });
   };
 
@@ -120,7 +119,7 @@ class AutosuggestCustom extends React.Component {
       onChange: this.onChange,
       placeholder: 'Country name',
       type: 'text',
-      value,
+      value
     };
 
     // View
